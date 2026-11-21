@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://balf36yydubwu"]
+
+[ext_resource type="Script" uid="uid://dg7jek1u1lpyl" path="res://control.gd" id="1_yngtg"]
+[ext_resource type="Texture2D" uid="uid://dt5he0dcffuwi" path="res://Assets/Sprites/main menu bg(2).png" id="2_ya4ef"]
+[ext_resource type="AudioStream" uid="uid://dmfp07k2wnfvr" path="res://Assets/Sounds/not deep breath.wav" id="3_ya4ef"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_adxma"]
+font_size = 27
+
+[node name="Control" type="Control" unique_id=1603526049]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yngtg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1612969720]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+texture = ExtResource("2_ya4ef")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1117083115]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=366290046]
+layout_mode = 2
+text = "Start the game"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=358733]
+layout_mode = 2
+text = "Quit the game"
+
+[node name="Label" type="Label" parent="." unique_id=139400550]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 173.0
+offset_right = 462.0
+offset_bottom = 290.0
+text = "CTRL - Hold and move on the walls
+SHIFT + DIRECTIONS - dash
+WAD - movement"
+label_settings = SubResource("LabelSettings_adxma")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1519433595]
+stream = ExtResource("3_ya4ef")
+autoplay = true
